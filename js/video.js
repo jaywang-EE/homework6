@@ -6,22 +6,23 @@ window.addEventListener("load", function() {
 });
 
 document.querySelector("#play").addEventListener("click", function() {
-	// console.log("Play Video");
+	console.log("Play Video");
 	video.play(); 
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
+	console.log("Pause Video");
 	myVideo.pause(); 
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	video.playbackRate -= 0.1;
-	console.log(video.playbackRate);
+	video.playbackRate *= 0.9;
+	console.log("New speed is " + video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	video.playbackRate += 0.1;
-	console.log(video.playbackRate);
+	video.playbackRate /= 0.9;
+	console.log("New speed is " + video.playbackRate);
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
@@ -30,7 +31,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 		video.currentTime = 0;
 		video.play(); 
 	}
-	console.log(video.currentTime);
+	console.log("Current location " + video.currentTime);
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
@@ -55,7 +56,7 @@ document.querySelector("#original").addEventListener("click", function() {
 function onVolumeChange () {
 	var volumeSlider = document.querySelector("#volumeSlider");
 	video.volume = volumeSlider.value/100.0;
-	console.log(volumeSlider.value);
+	// console.log(volumeSlider.value);
 	console.log(video.volume);
 	document.querySelector("#volume").innerHTML = volumeSlider.value + "%";
 }
