@@ -2,11 +2,11 @@ var video;
 
 window.addEventListener("load", function() {
 	video = document.querySelector("#myVideo");
-	document.querySelector("#volume").innerHTML = "100%";
 });
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
+	document.querySelector("#volume").innerHTML = volumeSlider.value + "%";
 	video.play(); 
 });
 
